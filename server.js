@@ -3,18 +3,18 @@ const cors = require("cors");
 
 const app = express();
 
+// Configuração de CORS
 var corsOptions = {
-  origin: "http://localhost:8081"
+  origin: "http://localhost:8081" // pode ajustar conforme necessário
 };
 
 app.use(cors(corsOptions));
 
-// parse requests of content-type - application/json
+// Middleware para interpretar JSON e URL-encoded
 app.use(express.json());
-
-// parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
 
+// Conexão com o banco de dados MongoDB
 const db = require("./app/models");
 db.mongoose
   .connect(db.url, {
@@ -29,14 +29,15 @@ db.mongoose
     process.exit();
   });
 
-// simple route
+// Rota principal
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to bezkoder application." });
 });
 
-require("./app/routes/turorial.routes")(app);
+// Rota de exemplo (corrigido de 'turorial' para 'tutorial')
+require("./app/routes/tutorial.routes")(app);
 
-// set port, listen for requests
+// Inicia o servidor
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
