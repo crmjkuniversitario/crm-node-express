@@ -1,0 +1,23 @@
+[
+    {
+      "title": "João da Silva",
+      "description": "Cliente hospedado no quarto 101",
+      "published": true
+    },
+    {
+      "title": "Maria Oliveira",
+      "description": "Cliente com estadia prolongada no quarto 202",
+      "published": true
+    },
+    {
+      "title": "Carlos Souza",
+      "description": "Check-in realizado hoje, quarto 303",
+      "published": false
+    },
+    {
+      "title": "Ana Paula Lima",
+      "description": "Cliente VIP, quarto 404",
+      "published": true
+    }
+  ]
+  
